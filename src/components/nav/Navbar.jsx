@@ -7,7 +7,7 @@ import Container from "../grid/Container";
 import Row from "../grid/Row";
 import Col from "../grid/Col";
 
-import siteLog from "../../assets/images/ldprojects-logo-520-min.png";
+import siteLog from "../../assets/images/ldproject-logo-520-min.png";
 
 import "./Navbar.scss";
 

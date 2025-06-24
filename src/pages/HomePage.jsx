@@ -30,24 +30,16 @@ const Home = () => {
                 <Heading modifierClass="center">Project Overview</Heading>
                 <Content textAlignment="center" spacing="none">
                     <p>
-                        This project serves as a practice exercise, highlighting
-                        mostely static components on the home page from my
-                        earlier projects. Rather than using a CSS framework, I
-                        decided to develop a custom grid system just for the fun
-                        of it. Also styling and advanced layouts are not the
-                        priority.
+                        This project is a practice exercise showcasing mostly
+                        static components from my previous work. Instead of
+                        relying on CSS frameworks, I built a simple custom grid
+                        system just for fun. Styling and complex layouts aren’t
+                        the main focus here.
                     </p>
                     <p>
-                        Data is fetched from JSON files. To enable the test
-                        slider, start the JSON server using the command `&quot;`npm run
-                        server`&quot;` before launching the project.
-                    </p>
-                    <p>
-                        Navigate through the menu to explore different project
-                        pages, each featuring more intricate components. These
-                        components are predominantly sourced from online
-                        tutorials and courses, contributing to a diverse
-                        learning experience.
+                        Use the menu to explore different pages, each containing
+                        more interactive and complex components inspired by
+                        online tutorials.
                     </p>
                 </Content>
             </Container>
