@@ -202,3 +202,5 @@ This app focuses on reinforcing React fundamentals and creating maintainable, sc
 ## Final Notes
 
 This project is a collection of learning exercises and experiments, helping refine skills in React, state management, and UI development.
+
+| Built with curiosity and care by *Lazar Dačić* 👨‍💻
