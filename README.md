@@ -1,6 +1,10 @@
-# LDProject Overview
+# LDProject – React Showcase App
 
-This project serves as a practice exercise, highlighting mostly static components on the home page from my earlier projects. Rather than using a CSS framework, I decided to develop a custom grid system just for fun. Styling and advanced layouts are not the priority.
+Welcome to **LDProject**, a curated collection of React-based components, pages, and mini-projects. This app serves both as a sandbox for learning and a showcase of practical React skills.
+
+The **home page** features a responsive layout with sliders and sections, while other routes contain fully functional interactive projects, including CRUD operations, games, and state-based UI behavior.
+
+Rather than using a CSS framework, this project includes a **custom-built responsive grid system**, created for learning purposes and maximum flexibility.
 
 Data is fetched from JSON files. To enable the test slider, start the JSON server using the command:
 
@@ -11,6 +15,8 @@ npm run server
 before launching the project.
 
 Navigate through the menu to explore different project pages, each featuring more intricate components. These components are predominantly sourced from online tutorials and courses, contributing to a diverse learning experience.
+
+---
 
 ## Technologies Used
 
@@ -25,13 +31,13 @@ Navigate through the menu to explore different project pages, each featuring mor
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/lazard9/react-projects.git
+    git clone https://github.com/lazard9/react-ldproject.git
     ```
 
 2. Navigate to the project folder:
 
     ```bash
-    cd ldprojects
+    cd react-ldproject
     ```
 
 3. Install dependencies:
@@ -88,10 +94,55 @@ export default defineConfig({
 });
 ```
 
+## Custom Grid System
+
+To better understand how CSS layout works under the hood, this project implements a minimal responsive grid system inspired by Bootstrap and CSS frameworks.
+
+### Components
+
+- `<Container containerWidth="lg">` – Sets content max-width
+- `<Row>` – Flex container for `<Col>`s
+- `<Col>` – Accepts responsive props like xs, sm, md, lg, xl, and custom margins like margin={3} or marginLg={4}
+
+### Example Usage
+
+```jsx
+<Container containerWidth="lg">
+  <Heading modifierClass="center">Portrait Cards</Heading>
+  <Row>
+    <Col xs={12} sm={6} md={4} lg={3} margin={3}>
+      <PortraitCard ... />
+    </Col>
+  </Row>
+</Container>
+```
+
+### Example CSS
+
+```scss
+.col {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mb-col-3 {
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .mb-col-lg-4 {
+    margin-bottom: 4rem;
+  }
+}
+```
+
 ## Project Structure
 
 - The **home page** is mostly static except for the slider.
 - The **ProjectsOne** page contains various interactive projects inspired by online tutorials.
+- The **Destinations** a full CRUD app using a custom UI
 
 ## Featured Projects in ProjectsOne
 
@@ -124,7 +175,7 @@ These projects are inspired by tasks and solutions found on the Web Dev Simplifi
     - Once correctly guessed, the game resets after a few seconds.
     - Initially implemented with `useEffect`, but later refactored to rely only on `useState` for better control.
 
-### Destinations Listing App
+## Destinations Listing App
 
 Inspired by a [YouTube crash course on job listings](https://youtu.be/LDB4uaJ87e0?si=9yJWcM9itMkhTCDr), this project takes the core idea and reshapes it into a tourist destination listing experience.
 
@@ -147,5 +198,7 @@ Unlike the original course project, this version splits the frontend and backend
 This app focuses on reinforcing React fundamentals and creating maintainable, scalable component structures through hands-on experimentation.
 
 ---
+
+## Final Notes
 
 This project is a collection of learning exercises and experiments, helping refine skills in React, state management, and UI development.
