@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "imgUrl": "/media/card-1.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "2",
+        "imgUrl": "/media/card-2.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "3",
+        "imgUrl": "/media/card-3.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "4",
+        "imgUrl": "/media/card-4.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "5",
+        "imgUrl": "/media/card-5.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "6",
+        "imgUrl": "/media/card-6.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "7",
+        "imgUrl": "/media/card-7.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    },
+    {
+        "id": "8",
+        "imgUrl": "/media/card-8.png",
+        "imgAlt": "some text",
+        "title": "Bullet Title",
+        "description": "Supportive text and the essential context goes here."
+    }
+]

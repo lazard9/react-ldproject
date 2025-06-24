@@ -1,0 +1,127 @@
+.product-options {
+    &__image {
+        height: 120px;
+        border-radius: 1.5rem;
+
+        @media (min-width: 576px) {
+            height: 240px;
+        }
+    }
+
+    @media (min-width: 576px) {
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__sizes {
+        display: flex;
+        flex-wrap: wrap;
+
+        .size-option {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid hsl(200, 100%, 90%);
+            transition: all 0.32s ease-in-out;
+
+            // &.selected,
+            &:hover,
+            &:has(input[type="radio"]:checked) {
+                color: hsl(263, 94%, 65%);
+                border-color: hsl(263, 94%, 65%);
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+        }
+    }
+
+    &__colors {
+        display: flex;
+        flex-wrap: wrap;
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked ~ .checkmark {
+            border-color: hsl(263, 94%, 65%);
+        }
+
+        .color-option {
+            .checkmark {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                border: 2px solid hsl(200, 100%, 90%);
+                cursor: pointer;
+                display: inline-block;
+                transition: border-color 0.32s ease-in-out;
+
+                &:hover {
+                    border-color: hsl(263, 94%, 65%);
+                }
+
+                &.black {
+                    background-color: black;
+                }
+
+                &.purple {
+                    background-color: purple;
+                }
+
+                &.blue {
+                    background-color: blue;
+                }
+
+                &.cyan {
+                    background-color: cyan;
+                }
+
+                &.green {
+                    background-color: green;
+                }
+
+                &.yellow {
+                    background-color: yellow;
+                }
+
+                &.orange {
+                    background-color: orange;
+                }
+
+                &.red {
+                    background-color: red;
+                }
+            }
+        }
+    }
+
+    &__clear-button {
+        width: 180px;
+        text-decoration: none;
+        padding: 5px;
+        background-color: transparent;
+        border-radius: 4px;
+        border: 1px solid hsl(200, 100%, 90%);
+        font-size: 14px;
+        text-align: center;
+        color: hsl(200, 100%, 90%);
+        cursor: pointer;
+        transition: all 0.32s ease-in-out;
+        display: inline-block;
+        box-sizing: border-box;
+
+        &:hover {
+            color: hsl(258, 18%, 19%);
+            background-color: hsl(200, 100%, 90%);
+        }
+    }
+}

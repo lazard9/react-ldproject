@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "imgUrl": "/media/landscape-1.png",
+        "title": "Landscape 1",
+        "description": "Supportive text and the essential context goes here.",
+        "ctaLink": "#",
+        "ctaText": "Action"
+    },
+    {
+        "id": "2",
+        "imgUrl": "/media/landscape-2.jpg",
+        "title": "Landscape 2",
+        "description": "Supportive text and the essential context goes here.",
+        "ctaLink": "#",
+        "ctaText": "Action"
+    },
+    {
+        "id": "3",
+        "imgUrl": "/media/landscape-3.jpg",
+        "title": "Landscape 3",
+        "description": "Supportive text and the essential context goes here.",
+        "ctaLink": "#",
+        "ctaText": "Action"
+    },
+    {
+        "id": "4",
+        "imgUrl": "/media/landscape-4.jpg",
+        "title": "Landscape 4",
+        "description": "Supportive text and the essential context goes here.",
+        "ctaLink": "#",
+        "ctaText": "Action"
+    }
+]

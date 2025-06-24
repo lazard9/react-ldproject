@@ -1,0 +1,115 @@
+.landscape-card {
+    position: relative;
+    padding: 18px 19px 74px 18px;
+    color: hsl(258, 18%, 19%);
+    background-color: #fff;
+    border-radius: 24px;
+    height: 505px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 320px;
+    transition: padding-top 0.32s ease-in-out;
+
+    &:hover {
+        padding-top: 230px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        opacity: 0.7;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(2, 79, 208, 0),
+            hsl(245, 62%, 65%)
+        );
+        transition: height 0.32s ease-in-out;
+        z-index: 1;
+    }
+
+    &:hover::after {
+        background-image: linear-gradient(
+            to bottom,
+            hsl(245, 62%, 65%),
+            hsl(245, 62%, 65%)
+        );
+        height: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding-top: 340px;
+
+        &:hover {
+            padding-top: 250px;
+        }
+    }
+
+    @media screen and (min-width: 1025px) {
+        & {
+            padding-top: 360px;
+        }
+
+        &:hover {
+            padding-top: 270px;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        top: 18px;
+        right: 9px;
+        z-index: 2;
+    }
+
+    .heading {
+        color: #fff;
+        z-index: 2;
+    }
+
+    &__description {
+        margin: 19px 0 0;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+    }
+
+    &__cta {
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        left: 18px;
+        bottom: 55px;
+        z-index: 2;
+        text-decoration: none;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.32s ease-in-out;
+    }
+
+    &.alternate:hover &__cta {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,15 @@
+.progress-bar {
+    height: 5px;
+    background-image: linear-gradient(
+        to right,
+        hsl(194, 97%, 55%),
+        hsl(263, 94%, 65%)
+    );
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.2s;
+    border-radius: 5px;
+    z-index: 111;
+}

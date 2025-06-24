@@ -1,0 +1,16 @@
+.card-image {
+    display: block;
+    width: 100%;
+
+    &--default {
+        border-radius: 1rem;
+    }
+
+    &--circle {
+        border-radius: 50%;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+    }
+}
