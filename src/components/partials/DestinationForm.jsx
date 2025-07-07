@@ -32,7 +32,7 @@ const DestinationForm = ({ destinationSubmit, initialDestinationData }) => {
         e.preventDefault();
 
         const rnd = Math.floor(Math.random() * 4) + 1;
-        const imgFile = `/media/destination-00${rnd}.png`;
+        const imgFile = `/media/destination-00${rnd}.jpg`;
 
         const onSubmitDestinationData = {
             id: initialDestinationData?.id || uuidv4(),
