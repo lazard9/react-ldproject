@@ -62,7 +62,7 @@ const Navbar = () => {
                                         </li>
                                         <li>
                                             <NavLink
-                                                to="/destinations"
+                                                to="/destinations" end
                                                 className={linkClass}
                                                 onClick={toggleMenu}
                                             >
@@ -83,7 +83,7 @@ const Navbar = () => {
                                     <>
                                         <li>
                                             <NavLink
-                                                to="/destinations"
+                                                to="/destinations" end
                                                 className={linkClass}
                                             >
                                                 Destinations
