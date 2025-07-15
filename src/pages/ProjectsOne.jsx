@@ -78,26 +78,20 @@ const ProjectsOne = () => {
                 <Content maxWidth="none">
                     <p>Choose from several product options.</p>
                     <p>
-                        Similar to the previous project, `useSearchParams` is
-                        used to set the state in the URL. The first example
-                        utilizes `useState` and `useEffect` to track changes and
-                        update query parameters. However, I would not use this
-                        solution in production because we need to decide between
-                        using `useState` and `useSearchParams`, since now we
-                        have two sources of truth. Using both is redundant and
-                        need to be sinchronized.
+                        This component uses `useSearchParams` to keep product options in sync with the URL.
+                        Earlier, we used `useState` combined with `useEffect` to manually update
+                        query parameters, which created two sources of truth. The current solution avoids that by
+                        updating the URL directly during interaction.
                     </p>
                     <p>
-                        The second solution uses exclusively `useSearchParams`.
+                        The second solution relies solely on `useSearchParams` to manage state via the URL.
                     </p>
                     <p>
-                        It is important to note that the parameters in the URL
-                        will not be set before interacting with the buttons, as
-                        well as that there are buttons that can be used to clear
-                        the parameters from the URL, for easier interaction with
-                        different tasks and solutions independently of each
-                        other.
+                        It is important to note that URL parameters are not set until the user interacts with the form.
+                        Additionally, there is a clear button that resets the parameters to default values, allowing
+                        users to experiment with different states without affecting other parts of the app.
                     </p>
+
                 </Content>
 
                 <Row margin={4} marginLg={6}>
