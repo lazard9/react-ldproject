@@ -8,6 +8,13 @@ import "./ProductWithOptions.scss";
 const sizeMap = ["small", "medium", "large", "luxury"];
 const imageMap = productsWithOptions;
 
+/**
+ * Renders a form with radio buttons for selecting product size and color.
+ * Selected options are stored in URL search parameters.
+ * State is fully controlled via the URL.
+ *
+ * @returns {JSX.Element}
+ */
 const ProductWithOptions = () => {
     const [searchParams, setSearchParams] = useSearchParams({
         usize: "medium",
@@ -18,13 +25,19 @@ const ProductWithOptions = () => {
     const selectedColor = searchParams.get("ucolor");
 
     const navigate = useNavigate();
-
-    // const productImage = imageMap[selectedColor];
-    const productImage = selectedColor
-        ? imageMap.find((item) => item.color === selectedColor)
-        : imageMap.find((item) => item.color === "black");
+    
+    const productImage =
+        imageMap.find((item) => item.color === selectedColor) ||
+        imageMap.find((item) => item.color === "black");
 
     const clearFields = () => {
+        setSearchParams(
+            {
+                usize: "medium",
+                ucolor: "black",
+            },
+            { replace: true }
+        );
         navigate("/projects-one");
     };
 
@@ -46,10 +59,8 @@ const ProductWithOptions = () => {
                         {sizeMap.map((item) => (
                             <label
                                 key={item}
-                                className="size-option"
-                                // className={`size-option ${
-                                //     selectedSize === item ? "selected" : ""
-                                // }`}
+                                className={`size-option ${selectedSize === item ? "selected" : ""
+                                    }`}
                             >
                                 <input
                                     type="radio"
@@ -59,17 +70,10 @@ const ProductWithOptions = () => {
                                     onChange={(e) => {
                                         setSearchParams(
                                             (prev) => {
-                                                if (prev.has("ucolor")) {
-                                                    prev.set(
-                                                        "usize",
-                                                        e.target.value
-                                                    );
-                                                } else {
-                                                    prev = new URLSearchParams({
-                                                        usize: e.target.value,
-                                                        ucolor: "black",
-                                                    });
-                                                }
+                                                prev.set(
+                                                    "usize",
+                                                    e.target.value
+                                                );
                                                 return prev;
                                             },
                                             { replace: true }
@@ -87,32 +91,25 @@ const ProductWithOptions = () => {
                             item.color !== "black" ? (
                                 <label
                                     key={item.color}
-                                    className="color-option"
+                                    className={`color-option ${selectedColor === item.color
+                                            ? "selected"
+                                            : ""
+                                        }`}
                                 >
                                     <input
                                         type="radio"
                                         name="ucolor"
                                         value={item.color}
-                                        checked={selectedColor === item.color}
+                                        checked={
+                                            selectedColor === item.color
+                                        }
                                         onChange={(e) => {
                                             setSearchParams(
                                                 (prev) => {
-                                                    if (prev.has("usize")) {
-                                                        prev.set(
-                                                            "ucolor",
-                                                            e.target.value
-                                                        );
-                                                    } else {
-                                                        prev =
-                                                            new URLSearchParams(
-                                                                {
-                                                                    usize: "medium",
-                                                                    ucolor: e
-                                                                        .target
-                                                                        .value,
-                                                                }
-                                                            );
-                                                    }
+                                                    prev.set(
+                                                        "ucolor",
+                                                        e.target.value
+                                                    );
                                                     return prev;
                                                 },
                                                 { replace: true }
