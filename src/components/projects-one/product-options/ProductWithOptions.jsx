@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import productsWithOptions from "../../../assets/data/products-with-options.json";
 
@@ -9,38 +9,34 @@ import "./ProductWithOptions.scss";
 const sizeMap = ["small", "medium", "large", "luxury"];
 const imageMap = productsWithOptions;
 
+/**
+ * Renders a form with radio buttons for selecting product size and color.
+ * Stores selected options in URL search parameters.
+ * Allows clearing of selected options.
+ *
+ * @returns {JSX.Element}
+ */
 const ProductWithOptions = () => {
     const [selectedSize, setSelectedSize] = useState("large");
     const [selectedColor, setSelectedColor] = useState("black");
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [, setSearchParams] = useSearchParams();
     const [hasInteracted, setHasInteracted] = useState(false);
 
-    const navigate = useNavigate();
+    const handleInteraction = () => {
+        if (!hasInteracted) {
+            setHasInteracted(true);
+        }
 
-    const updateSearchParams = () => {
         setSearchParams({
             size: selectedSize,
             color: selectedColor,
         });
     };
 
-    useEffect(() => {
-        if (hasInteracted) {
-            updateSearchParams();
-        }
-    }, [selectedSize, selectedColor, hasInteracted]);
-
-    /*
-     * Preventing useEffect to set query parameters on page load
-     */
-    const handleInteraction = () => {
-        if (hasInteracted === true) return;
-
-        setHasInteracted(true);
-    };
-
     // const productImage = imageMap[selectedColor];
-    const productImage = imageMap.find((item) => item.color === selectedColor);
+    const productImage = imageMap.find((item) => item.color === selectedColor) || {};
+
+    const navigate = useNavigate();
 
     const clearFields = () => {
         setSelectedSize("large");
@@ -69,9 +65,9 @@ const ProductWithOptions = () => {
                             <label
                                 key={item}
                                 className="size-option"
-                                // className={`size-option ${
-                                //     selectedSize === item ? "selected" : ""
-                                // }`}
+                            // className={`size-option ${
+                            //     selectedSize === item ? "selected" : ""
+                            // }`}
                             >
                                 <input
                                     type="radio"
