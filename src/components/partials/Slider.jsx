@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { fetchAllDestinations } from "../@/api/destinations";
 import SpinnerPuffLoader from "./SpinnerPuffLoader";
 import {
     Autoplay,
@@ -20,17 +21,14 @@ import "./Slider.scss";
 // import slides from "../../slider-cards.json";
 
 const Slider = () => {
-    const [sliderCards, setSliderCards] = useState([]);
+    const [destinationCards, setDestinationCards] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchJobs = async () => {
-            const apiUrl = "/api/destinations";
-
+        const load = async () => {
             try {
-                const res = await fetch(apiUrl);
-                const data = await res.json();
-                setSliderCards(data);
+                const data = await fetchAllDestinations();
+                setDestinationCards(data);
             } catch (error) {
                 console.log("Error fetching data", error);
             } finally {
@@ -38,7 +36,7 @@ const Slider = () => {
             }
         };
 
-        fetchJobs();
+        load();
     }, []);
 
     const progressCircle = useRef(null);
@@ -66,12 +64,12 @@ const Slider = () => {
                 //     type: "progressbar",
                 // }}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
-                // scrollbar={{ draggable: true }}
+            // scrollbar={{ draggable: true }}
             >
                 {loading ? (
                     <SpinnerPuffLoader />
                 ) : (
-                    sliderCards.slice(0, 3).map((slide) => (
+                    destinationCards.slice(0, 3).map((slide) => (
                         <SwiperSlide key={slide.id}>
                             <SliderCard slide={slide} />
                         </SwiperSlide>

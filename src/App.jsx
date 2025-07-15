@@ -10,7 +10,6 @@ import HomePage from "./pages/HomePage";
 import ProjectsOne from "./pages/ProjectsOne";
 import Destinations from "./pages/Destinations";
 import DestinationsSingle from "./pages/DestinationsSingle";
-// import DestinationsSingle, { destinationsLoader } from "./pages/DestinationsSingle";
 import DestinationsNew from "./pages/DestinationsNew";
 import DestinationsEdit from "./pages/DestinationsEdit";
 import AboutPage from "./pages/AboutPage";
@@ -18,55 +17,47 @@ import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+import {
+    fetchDestinationById,
+    fetchAllDestinations,
+    addDestination,
+    editDestination,
+    deleteDestination,
+} from "@/api/destinations";
+
+/**
+ * A loader function for react-router-dom that fetches a single destination by ID.
+ * 
+ * The function takes the route parameters as an object and returns a promise that resolves with the destination object.
+ * 
+ * @param {{ params: { id: string | number } }} routeParams - The route parameters object.
+ * @returns {Promise<Destination>} A promise that resolves with the destination object.
+ * @throws {Error} If the fetch fails.
+ */
 const destinationLoader = async ({ params }) => {
-    const res = await fetch(`/api/destinations/${params.id}`);
-    const data = await res.json();
-    return data;
+    return await fetchDestinationById(params.id);
 };
 
+/**
+ * A loader function for react-router-dom that fetches a single destination by slug.
+ * 
+ * The function takes the route parameters as an object and returns a promise that resolves with the destination object.
+ * 
+ * The function fetches all destinations and then finds the one with the matching slug. If no destination is found, it throws a 404 response.
+ * 
+ * @param {{ params: { slug: string } }} routeParams - The route parameters object.
+ * @returns {Promise<Destination>} A promise that resolves with the destination object.
+ * @throws {Response} If no destination with the given slug is found.
+ */
 const destinationLoaderBySlug = async ({ params }) => {
-  const res = await fetch('/api/destinations');
-  const data = await res.json();
-  const destination = data.find(d => d.slug === params.slug);
+    const data = await fetchAllDestinations();
+    const destination = data.find((d) => d.slug === params.slug);
 
-  if (!destination) {
-    throw new Response("Not Found", { status: 404 });
-  }
+    if (!destination) {
+        throw new Response("Not Found", { status: 404 });
+    }
 
-  return destination;
-}
-
-const addDestination = async (destinationData) => {
-    // console.log(destinationData);
-
-    await fetch("/api/destinations", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(destinationData),
-    });
-    return;
-};
-
-const deleteDestination = async (id) => {
-    await fetch(`/api/destinations/${id}`, {
-        method: "DELETE",
-    });
-    return;
-};
-
-const editDestination = async (destinationData) => {
-    // console.log(destinationData);
-
-    await fetch(`/api/destinations/${destinationData.id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(destinationData),
-    });
-    return;
+    return destination;
 };
 
 const router = createBrowserRouter(

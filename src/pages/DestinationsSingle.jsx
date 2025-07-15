@@ -11,10 +11,39 @@ import Content from "../components/partials/Content";
 import CardImage from "../components/partials/CardImage";
 import CtaButton from '../components/partials/CtaButton';
 
+/**
+ * Renders a single destination page with options to edit or delete the destination.
+ * Utilizes data loaded by a loader function and navigation hooks.
+ * 
+ * Props:
+ * - deleteDestination (function): A callback function to delete a destination by ID.
+ * 
+ * Uses:
+ * - useNavigate from react-router-dom for navigation after deletion.
+ * - useLoaderData from react-router-dom to load destination data.
+ * - toast from react-toastify to display success messages.
+ * 
+ * Returns:
+ * A JSX fragment containing:
+ * - A heading displaying the destination title.
+ * - An image of the destination.
+ * - The destination description.
+ * - Buttons for editing and deleting the destination.
+ */
+
 const DestinationsSingle = ({ deleteDestination }) => {
     const navigate = useNavigate();
     const destination = useLoaderData();
 
+    /**
+     * Handles the deletion of a destination.
+     * 
+     * Confirmation dialog is prompted to user.
+     * If confirmed, deleteDestination is called with the destination ID as argument.
+     * A success toast message is displayed after deletion is successful.
+     * User is then redirected to the destinations list page.
+     * @param {number} destinationId - The ID of the destination to be deleted.
+     */
     const onDeleteClick = (destinationId) => {
         const confirm = window.confirm(
             "Are you sure you want to delete this destination?"
@@ -79,13 +108,5 @@ const DestinationsSingle = ({ deleteDestination }) => {
 DestinationsSingle.propTypes = {
     deleteDestination: PropTypes.func.isRequired,
 };
-
-// const destinationsLoader = async ({ params }) => {
-//     const res = await fetch(`/api/destinations/${params.id}`);
-//     const data = await res.json();
-//     return data;
-// };
-
-// export { DestinationsSingle as default, destinationsLoader };
 
 export default DestinationsSingle;

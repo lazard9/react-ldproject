@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { fetchAllDestinations } from "@/api/destinations";
+
 import SpinnerPuffLoader from "../components/partials/SpinnerPuffLoader";
 import Container from "../components/grid/Container";
 import Row from "../components/grid/Row";
@@ -12,17 +14,29 @@ import CtaInternalLink from "../components/partials/CtaInternalLink";
 
 import DestinationCard from "../components/partials/DestinationCard";
 
+/**
+ * Renders a list of destination cards with options to view, add, or manage destinations.
+ * Utilizes data fetched from an API and displays a loading spinner while data is being fetched.
+ * 
+ * Uses:
+ * - `useState` to manage the state of destination cards and loading status.
+ * - `useEffect` to fetch destination data on component mount.
+ * - `SpinnerPuffLoader` for loading state indication.
+ * 
+ * Returns:
+ * A JSX fragment containing:
+ * - A hero section with a background image and title.
+ * - A section for adding new destinations with a call-to-action link.
+ * - A grid layout displaying all fetched destination cards.
+ */
 const Destiantions = () => {
     const [destinationCards, setDestinationCards] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchJobs = async () => {
-            const apiUrl = "/api/destinations";
-
+        const load = async () => {
             try {
-                const res = await fetch(apiUrl);
-                const data = await res.json();
+                const data = await fetchAllDestinations();
                 setDestinationCards(data);
             } catch (error) {
                 console.log("Error fetching data", error);
@@ -31,7 +45,7 @@ const Destiantions = () => {
             }
         };
 
-        fetchJobs();
+        load();
     }, []);
 
     return (
@@ -47,9 +61,9 @@ const Destiantions = () => {
 
                 <Content textAlignment="center" spacing="minimal">
                     <p>
-                        Keep track of places you love or dream of visiting. 
-                        This page lets you manage your favorite destinations - 
-                        you can add, edit, or delete entries. 
+                        Keep track of places you love or dream of visiting.
+                        This page lets you manage your favorite destinations -
+                        you can add, edit, or delete entries.
                         It’s also a practical example of CRUD operations in React.
                     </p>
 
