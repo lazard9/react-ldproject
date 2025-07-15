@@ -2,6 +2,8 @@
 
 Welcome to **LDProject**, a curated collection of React-based components, pages, and mini-projects. This app serves both as a sandbox for learning and a showcase of practical React skills.
 
+This project is built upon nearly 10 years of backend and frontend experience, primarily custom development in WordPress, with additional exposure to NextJS, NuxtJS, and some Django.
+
 The **home page** features a responsive layout with sliders and sections, while other routes contain fully functional interactive projects, including CRUD operations, games, and state-based UI behavior.
 
 Rather than using a CSS framework, this project includes a **custom-built responsive grid system**, created for learning purposes and maximum flexibility.
@@ -181,14 +183,19 @@ Inspired by a [YouTube crash course on job listings](https://youtu.be/LDB4uaJ87e
 
 Key improvements and customizations:
 
-- Replaces job posts with **tourist destinations**
-- Uses a **custom-built grid system and styling** for this project (no CSS framework)
-- Implements **full CRUD functionality** (Create, Read, Update, Delete)
-- Uses **SEO-friendly slugs** in URLs instead of numeric IDs (UUID-based)
-- Adds an **error boundary** for better route-level error handling
-- Integrates **toast notifications** via `react-toastify`
-- Introduces a **reusable components**, styled using BEM and Bootstrap-style variants
-- Loads destination data and images from a **local JSON source**
+- ✅ Replaces job posts with **tourist destinations** as primary content
+- 🖼️ Uses a **custom-built grid layout** with pure CSS (no framework like Tailwind or Bootstrap)
+- 🔁 Implements **full CRUD functionality**:
+  - Create, Read, Update, Delete destinations
+  - Integrated with a mock API via local JSON or REST backend
+- 🔗 **SEO-friendly slugs** used in URLs instead of IDs (UUID-based and slugified)
+- 🚫 Adds an **error boundary** to gracefully handle route-level errors
+- 🔔 Integrates **toast notifications** via [`react-toastify`](https://fkhadra.github.io/react-toastify/introduction)
+- ♻️ Introduces **reusable UI components** styled using **BEM methodology** with Bootstrap-style class variants
+- 📁 Centralizes **API logic** into a dedicated `src/api/` module for better structure
+- 📸 Loads destination data and images from a **local JSON file**, emulating backend behavior
+- 🌍 Routing powered by **react-router-dom v6** with dynamic routes, loaders, and error elements for robust navigation
+- ⚙️ Configured **Vite with a proxy for /api calls** to a local backend, enabling seamless API integration during development
 
 Unlike the original course project, this version splits the frontend and backend across two local servers:
 
