@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { fetchAllDestinations } from "../@/api/destinations";
+import { fetchAllDestinations } from "@/api/destinations";
 import SpinnerPuffLoader from "./SpinnerPuffLoader";
 import {
     Autoplay,
@@ -20,6 +20,16 @@ import "./Slider.scss";
 
 // import slides from "../../slider-cards.json";
 
+/**
+ * A slider component that displays a list of destination cards.
+ *
+ * Fetches data from an API when mounted and displays a loading spinner
+ * while data is being fetched.
+ *
+ * Uses Swiper.js for the slider functionality.
+ *
+ * @returns {React.ReactElement} A JSX element containing the slider.
+ */
 const Slider = () => {
     const [destinationCards, setDestinationCards] = useState([]);
     const [loading, setLoading] = useState(true);

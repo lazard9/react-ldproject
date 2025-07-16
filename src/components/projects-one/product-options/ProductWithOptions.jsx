@@ -49,7 +49,6 @@ const ProductWithOptions = () => {
     return (
         <>
             <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                {/* <img src={productImage.image} alt={productImage.alt} /> */}
                 <div
                     className="product-options__image"
                     style={{
@@ -65,9 +64,6 @@ const ProductWithOptions = () => {
                             <label
                                 key={item}
                                 className="size-option"
-                            // className={`size-option ${
-                            //     selectedSize === item ? "selected" : ""
-                            // }`}
                             >
                                 <input
                                     type="radio"

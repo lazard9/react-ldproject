@@ -4,6 +4,16 @@ import Heading from "../../partials/Heading";
 
 import "./FilterProductList.scss";
 
+/**
+ * A component that filters a list of products based on a search query and a
+ * checkbox to show only candy products. The component uses the useState hook to
+ * maintain the state of the search query and the checkbox. The component also
+ * accepts a list of products as a prop and renders a list of the filtered
+ * products. If no matching products are found, the component renders a message
+ * indicating that no matching products were found.
+ *
+ * @returns {ReactElement} A ReactElement representing the filtered product list.
+ */
 const FilterProductList = () => {
     const [filterProducts, setFilterProducts] = useState("");
     const [showCandyOnly, setShowCandyOnly] = useState(false);

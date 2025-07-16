@@ -11,12 +11,26 @@ import Content from "../components/partials/Content";
 
 import DestinationForm from "../components/partials/DestinationForm";
 
+/**
+ * Renders a page for creating a new destination.
+ * 
+ * Props:
+ * - newDestination (function): A callback function to add a new destination.
+ * 
+ * Uses:
+ * - useNavigate from react-router-dom for navigation after destination is added.
+ * - toast from react-toastify to display success messages.
+ * 
+ * Returns:
+ * A JSX fragment containing:
+ * - A heading to prompt the user to create a new destination.
+ * - A description instructing the user to fill out the form.
+ * - A form to submit new destination details.
+ */
 const DestinationsNew = ({ newDestination }) => {
     const navigate = useNavigate();
 
     const handledDstinationSubmit = (destinationData) => {
-        // console.log("Submitting destination:", destinationData);
-
         newDestination(destinationData);
 
         toast.success('Destiantion Added Successfully');

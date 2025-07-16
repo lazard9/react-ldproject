@@ -35,15 +35,6 @@ const DestinationsSingle = ({ deleteDestination }) => {
     const navigate = useNavigate();
     const destination = useLoaderData();
 
-    /**
-     * Handles the deletion of a destination.
-     * 
-     * Confirmation dialog is prompted to user.
-     * If confirmed, deleteDestination is called with the destination ID as argument.
-     * A success toast message is displayed after deletion is successful.
-     * User is then redirected to the destinations list page.
-     * @param {number} destinationId - The ID of the destination to be deleted.
-     */
     const onDeleteClick = (destinationId) => {
         const confirm = window.confirm(
             "Are you sure you want to delete this destination?"

@@ -19,6 +19,23 @@ import portraitCardsData from "../assets/data/portrait-cards.json";
 import productCardsData from "../assets/data/product-cards.json";
 import landscapeCardsData from "../assets/data/landscape-cards.json";
 
+/**
+ * The Home component renders the homepage of the application, showcasing
+ * various UI components like HeroSection, Slider, and different types of
+ * cards (Landscape, Portrait, Product) using a custom grid system.
+ *
+ * Includes:
+ * - A HeroSection with a background image and title.
+ * - A project overview section explaining the purpose of the page.
+ * - A Slider component for displaying various items.
+ * - A grid display of landscape cards, portrait cards, and product cards,
+ *   each mapped from corresponding data sources.
+ * - A ParalaxSection for visual effect.
+ *
+ * This component focuses on static components and layout demonstration,
+ * without reliance on CSS frameworks.
+ */
+
 const Home = () => {
     return (
         <>

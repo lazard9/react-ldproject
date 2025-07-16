@@ -12,6 +12,24 @@ import Content from "../components/partials/Content";
 
 import DestinationForm from "../components/partials/DestinationForm";
 
+/**
+ * Renders the destination editing page, allowing users to update an existing destination's details.
+ * Utilizes data loaded by a loader function and navigation hooks.
+ * 
+ * Props:
+ * - updateDestination (function): A callback function to update a destination by ID.
+ * 
+ * Uses:
+ * - useLoaderData from react-router-dom to load the current destination data.
+ * - useNavigate from react-router-dom for navigation after update.
+ * - toast from react-toastify to display success messages.
+ * 
+ * Returns:
+ * A JSX fragment containing:
+ * - A heading displaying the destination title.
+ * - Instructions for updating the destination.
+ * - A form pre-filled with existing destination data for update.
+ */
 const DestinationsEdit = ({ updateDestination }) => {
     const destination = useLoaderData();
     const navigate = useNavigate();

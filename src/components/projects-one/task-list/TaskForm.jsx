@@ -1,6 +1,21 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 import "./TaskForm.scss";
 
+/**
+ * TaskForm is a React component that provides an interactive form for
+ * creating new tasks. The component takes a single prop, `addTask`, which
+ * is a function that adds a new task to the list.
+ *
+ * The component maintains state for the currently entered task, whether
+ * the task already exists in the list, and whether the start-typing message
+ * should be displayed.
+ *
+ * The component renders a form with an input field and a submit button.
+ * When the form is submitted, the component calls the `addTask` function
+ * with the current task, and displays a success or error message
+ * accordingly.
+ */
 function TaskForm({ addTask }) {
     const [newTask, setNewTask] = useState("");
     const [taskExists, setTaskExists] = useState({
@@ -16,23 +31,21 @@ function TaskForm({ addTask }) {
             setTimeout(() => {
                 setShowStartTyping(false);
             }, 4000);
-            return () => clearTimeout(timer);
+            return;
         }
 
         const exists = addTask(capitalizeFirstLetter(newTask));
 
         if (!exists.success) {
             setTaskExists({ success: exists.success, message: exists.message });
-            setTimeout(() => {
-                setTaskExists({ success: undefined, message: "" });
-            }, 4000);
         } else {
             setNewTask("");
             setTaskExists({ success: exists.success, message: exists.message });
-            setTimeout(() => {
-                setTaskExists({ success: undefined, message: "" });
-            }, 4000);
         }
+
+        setTimeout(() => {
+            setTaskExists({ success: undefined, message: "" });
+        }, 4000);
     }
 
     function capitalizeFirstLetter(str) {
@@ -69,5 +82,9 @@ function TaskForm({ addTask }) {
         </form>
     );
 }
+
+TaskForm.propTypes = {
+    addTask: PropTypes.func,
+};
 
 export default TaskForm;

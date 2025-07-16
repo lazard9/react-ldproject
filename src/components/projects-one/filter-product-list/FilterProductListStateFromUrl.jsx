@@ -4,6 +4,18 @@ import Heading from "../../partials/Heading";
 
 import "./FilterProductListStateFromUrl.scss";
 
+/**
+ * A component that filters products based on a search query and an optional
+ * checkbox value for "Show Candy Only", and displays the filtered results.
+ * The search query and checkbox value are saved to the URL as query parameters,
+ * and the component will update the URL when the search query or checkbox value
+ * changes, and will update the component state when the URL changes.
+ * The component will also clear the search fields and URL when the user clicks
+ * the "Clear fields & URL" button.
+ *
+ * @function FilterProductListStateFromUrl
+ * @returns {JSX.Element} The component.
+ */
 const FilterProductListStateFromUrl = () => {
     const [searchParams, setSearchParams] = useSearchParams({
         s: "",
@@ -13,13 +25,6 @@ const FilterProductListStateFromUrl = () => {
     const search = searchParams.get("s");
     const isCandy = searchParams.get("candy") === "true";
     const navigate = useNavigate();
-    // console.log(search, isCandy);
-
-    // const filteredResults = products.filter(
-    //     (product) =>
-    //         product.name.toLowerCase().includes(search.toLowerCase()) &&
-    //         (!isCandy || product.candy)
-    // );
 
     const filteredResults =
         searchParams.has("s") && searchParams.has("candy")
@@ -65,15 +70,6 @@ const FilterProductListStateFromUrl = () => {
                                 { replace: true }
                             );
                         }}
-                        // onChange={(e) =>
-                        //     setSearchParams(
-                        //         (prev) => {
-                        //             prev.set("s", e.target.value);
-                        //             return prev;
-                        //         },
-                        //         { replace: true }
-                        //     )
-                        // }
                     />
                 </label>
             </div>
@@ -100,15 +96,6 @@ const FilterProductListStateFromUrl = () => {
                                 { replace: true }
                             );
                         }}
-                        // onChange={(e) =>
-                        //     setSearchParams(
-                        //         (prev) => {
-                        //             prev.set("candy", e.target.checked);
-                        //             return prev;
-                        //         },
-                        //         { replace: true }
-                        //     )
-                        // }
                     />
                 </label>
             </div>

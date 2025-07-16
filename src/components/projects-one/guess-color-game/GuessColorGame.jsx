@@ -1,7 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./GuessColorGame.scss";
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * GuessColorGame is a React component that provides an interactive game
+ * where the user has to guess the correct color from a set of randomly
+ * generated hexadecimal color codes. On a correct guess, a success message
+ * is displayed, and the game resets after a short delay. On an incorrect
+ * guess, an error message is shown, allowing the user to try again.
+ *
+ * The component maintains state for the current set of colors, the
+ * background color to be guessed, whether the game is active, and the status
+ * of the last guess. Colors are randomly generated and updated as the game
+ * progresses.
+ *
+ * Methods include:
+ * - `generateHexColors()`: Generates an array of three random hexadecimal colors.
+ * - `insertHexColors()`: Updates the state with a new set of colors and a new
+ *   target background color.
+ * - `compareColors(clickedColor)`: Compares the clicked color with the target
+ *   background color and updates the game state accordingly.
+ *
+ * The component renders a set of buttons for selecting colors and displays
+ * messages indicating the result of the user's guess.
+ */
+
+/*******  4e29f853-4c57-4d26-b642-f53ca6bdd6d3  *******/
 const GuessColorGame = () => {
     const startColors = generateHexColors();
     const startBackgroundColor =
@@ -12,27 +37,6 @@ const GuessColorGame = () => {
         useState(startBackgroundColor);
     const [successMessage, setSuccessMessage] = useState();
     const [gameActive, setGameActive] = useState(true);
-
-    // useEffect(() => {
-    //     if (!gameActive) {
-    //         const timeoutId = setTimeout(() => {
-    //             setGameActive(true);
-    //             setSuccessMessage(undefined);
-    //             insertHexColors();
-    //         }, 3600);
-
-    //         return () => clearTimeout(timeoutId);
-    //     }
-    // }, [gameActive]);
-
-    // const compareColors = (clickedColor) => {
-    //     if (backgroundColor === clickedColor && gameActive) { // Dodata provera za gameActive
-    //         setSuccessMessage(true);
-    //         setGameActive(false); // Blokiranje dugmića
-    //     } else {
-    //         setSuccessMessage(false);
-    //     }
-    // };
 
     const compareColors = (clickedColor) => {
         setSuccessMessage(undefined);

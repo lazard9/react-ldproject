@@ -25,7 +25,7 @@ const ProductWithOptions = () => {
     const selectedColor = searchParams.get("ucolor");
 
     const navigate = useNavigate();
-    
+
     const productImage =
         imageMap.find((item) => item.color === selectedColor) ||
         imageMap.find((item) => item.color === "black");
@@ -44,7 +44,6 @@ const ProductWithOptions = () => {
     return (
         <>
             <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                {/* <img src={productImage.image} alt={productImage.alt} /> */}
                 <div
                     className="product-options__image"
                     style={{
