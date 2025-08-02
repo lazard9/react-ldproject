@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./TaskForm.scss";
 
 /**
@@ -17,16 +17,13 @@ import "./TaskForm.scss";
  * accordingly.
  */
 function TaskForm({ addTask }) {
-    const [newTask, setNewTask] = useState("");
-    const [taskExists, setTaskExists] = useState({
-        success: undefined,
-        message: "",
-    });
+    const [task, setTask] = useState("");
+    const [taskExists, setTaskExists] = useState({ success: undefined, message: "" });
     const [showStartTyping, setShowStartTyping] = useState(false);
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (newTask === "") {
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (task === "") {
             setShowStartTyping(true);
             setTimeout(() => {
                 setShowStartTyping(false);
@@ -34,13 +31,13 @@ function TaskForm({ addTask }) {
             return;
         }
 
-        const exists = addTask(capitalizeFirstLetter(newTask));
+        const taskExists = addTask(capitalizeFirstLetter(task));
 
-        if (!exists.success) {
-            setTaskExists({ success: exists.success, message: exists.message });
+        if (!taskExists.success) {
+            setTaskExists({ success: taskExists.success, message: taskExists.message });
         } else {
-            setNewTask("");
-            setTaskExists({ success: exists.success, message: exists.message });
+            setTask("");
+            setTaskExists({ success: taskExists.success, message: taskExists.message });
         }
 
         setTimeout(() => {
@@ -55,20 +52,20 @@ function TaskForm({ addTask }) {
     return (
         <form onSubmit={handleSubmit} className="task-form">
             <div className="task-form__row">
-                {showStartTyping && newTask === "" && (
+                {showStartTyping && task === "" && (
                     <span className="task-form__start-typing">
                         Start typing...
                     </span>
                 )}
-                <label htmlFor="item">Create new task:</label>
+                <label htmlFor="task">Create new task:</label>
                 <input
-                    value={newTask}
-                    onChange={(e) => setNewTask(e.target.value)}
+                    value={task}
+                    onChange={({ target: { value } }) => setTask(value)}
                     type="text"
-                    id="item"
+                    id="task"
                 />
             </div>
-            <button className="task-form__submit">Set tastk</button>
+            <button className="task-form__submit">Set task</button>
             {taskExists.success === false && (
                 <span className="task-form__duplicate-notification">
                     {taskExists.message}
