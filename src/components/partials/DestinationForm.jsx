@@ -63,7 +63,6 @@ const DestinationForm = ({ destinationSubmit, initialDestinationData }) => {
           value={formData.title}
           onChange={handleChange}
           required
-          autoFocus
         />
       </div>
 
