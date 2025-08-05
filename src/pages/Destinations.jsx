@@ -17,12 +17,12 @@ import DestinationCard from "../components/partials/DestinationCard";
 /**
  * Renders a list of destination cards with options to view, add, or manage destinations.
  * Utilizes data fetched from an API and displays a loading spinner while data is being fetched.
- * 
+ *
  * Uses:
  * - `useState` to manage the state of destination cards and loading status.
  * - `useEffect` to fetch destination data on component mount.
  * - `SpinnerPuffLoader` for loading state indication.
- * 
+ *
  * Returns:
  * A JSX fragment containing:
  * - A hero section with a background image and title.
@@ -30,87 +30,83 @@ import DestinationCard from "../components/partials/DestinationCard";
  * - A grid layout displaying all fetched destination cards.
  */
 const Destiantions = () => {
-    const [destinationCards, setDestinationCards] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [destinationCards, setDestinationCards] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const load = async () => {
-            try {
-                const data = await fetchAllDestinations();
-                setDestinationCards(data);
-            } catch (error) {
-                console.log("Error fetching data", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const data = await fetchAllDestinations();
+        setDestinationCards(data);
+      } catch (error) {
+        console.log("Error fetching data", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        load();
-    }, []);
+    load();
+  }, []);
 
-    return (
-        <>
-            <HeroSection heroBackgroundImage={heroBackgroundImage}>
-                Destinations
-            </HeroSection>
+  return (
+    <>
+      <HeroSection heroBackgroundImage={heroBackgroundImage}>
+        Destinations
+      </HeroSection>
 
-            <Container containerWidth="lg">
-                <Heading modifierClass="center">
-                    Discover & Add Your Favorite Destinations
-                </Heading>
+      <Container containerWidth="lg">
+        <Heading modifierClass="center">
+          Discover & Add Your Favorite Destinations
+        </Heading>
 
-                <Content textAlignment="center" spacing="minimal">
-                    <p>
-                        Keep track of places you love or dream of visiting.
-                        This page lets you manage your favorite destinations -
-                        you can add, edit, or delete entries.
-                        It’s also a practical example of CRUD operations in React.
-                    </p>
+        <Content textAlignment="center" spacing="minimal">
+          <p>
+            Keep track of places you love or dream of visiting. This page lets
+            you manage your favorite destinations - you can add, edit, or delete
+            entries. It’s also a practical example of CRUD operations in React.
+          </p>
 
-                    <CtaInternalLink link="/destinations/new">Add new destination</CtaInternalLink>
-                </Content>
-            </Container>
+          <CtaInternalLink link="/destinations/new">
+            Add new destination
+          </CtaInternalLink>
+        </Content>
+      </Container>
 
-            <Container containerWidth="lg">
-                <Heading modifierClass="center">
-                    Overview of all destinations
-                </Heading>
+      <Container containerWidth="lg">
+        <Heading modifierClass="center">Overview of all destinations</Heading>
 
-                <Content textAlignment="center" spacing="minimal">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry`&apos;`s standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book.
-                    </p>
-                </Content>
+        <Content textAlignment="center" spacing="minimal">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry`&apos;`s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </p>
+        </Content>
 
-                <Row>
-                    {loading ? (
-                        <SpinnerPuffLoader />
-                    ) : (
-                        destinationCards.map((destination) => (
-                            <Col
-                                xs={12}
-                                sm={6}
-                                md={6}
-                                lg={4}
-                                xl={4}
-                                margin={3}
-                                marginLg={4}
-                                key={destination.id}
-                            >
-                                <DestinationCard
-                                    destination={destination}
-                                />
-                            </Col>
-                        ))
-                    )}
-                </Row>
-            </Container>
-        </>
-    );
+        <Row>
+          {loading ? (
+            <SpinnerPuffLoader />
+          ) : (
+            destinationCards.map((destination) => (
+              <Col
+                xs={12}
+                sm={6}
+                md={6}
+                lg={4}
+                xl={4}
+                margin={3}
+                marginLg={4}
+                key={destination.id}
+              >
+                <DestinationCard destination={destination} />
+              </Col>
+            ))
+          )}
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default Destiantions;

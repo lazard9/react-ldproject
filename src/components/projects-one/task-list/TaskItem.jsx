@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./TaskItem.scss";
 
 /**
@@ -15,29 +15,29 @@ import "./TaskItem.scss";
  * @returns {JSX.Element} - The rendered list item.
  */
 function TaskItem({ completed, id, title, toggleTask, deleteTask }) {
-    return (
-        <li className="task-list__item">
-            <label>
-                <input
-                    type="checkbox"
-                    checked={completed}
-                    onChange={(e) => toggleTask(id, e.target.checked)}
-                />
-                {title}
-            </label>
-            <button onClick={() => deleteTask(id)} className="task-list__delete">
-                Delete
-            </button>
-        </li>
-    );
+  return (
+    <li className="task-list__item">
+      <label>
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={(e) => toggleTask(id, e.target.checked)}
+        />
+        {title}
+      </label>
+      <button onClick={() => deleteTask(id)} className="task-list__delete">
+        Delete
+      </button>
+    </li>
+  );
 }
 
 TaskItem.propTypes = {
-    completed: PropTypes.bool,
-    id: PropTypes.number,
-    title: PropTypes.string,
-    toggleTask: PropTypes.func,
-    deleteTask: PropTypes.func,
+  completed: PropTypes.bool,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  toggleTask: PropTypes.func,
+  deleteTask: PropTypes.func,
 };
 
 export default TaskItem;

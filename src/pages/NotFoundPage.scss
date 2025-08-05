@@ -1,16 +1,16 @@
 .nothing-found-404 {
-    height: 75vh;
-    display: flex;
-    align-items: center;
+  height: 75vh;
+  display: flex;
+  align-items: center;
 
-    a {
-        background-image: linear-gradient(to right, hsl(194, 97%, 55%), hsl(263, 94%, 65%));
-        color: transparent;
-        background-clip: text;
-        transition: color 0.32s ease-in-out;
-        
-        &:hover {
-            color: hsl(263, 94%, 65%);
-        }
+  a {
+    background-image: linear-gradient(to right, hsl(194, 97%, 55%), hsl(263, 94%, 65%));
+    color: transparent;
+    background-clip: text;
+    transition: color 0.32s ease-in-out;
+
+    &:hover {
+      color: hsl(263, 94%, 65%);
     }
+  }
 }

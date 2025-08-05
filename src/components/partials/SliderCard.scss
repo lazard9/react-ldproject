@@ -1,46 +1,46 @@
 .slider-card {
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 20px 20px 30px;
-    background-color: hsl(221, 21%, 18%);
-    box-shadow: 0 5px 15px 5px hsla(218, 25%, 15%, 0.5);
-    border-radius: 20px;
-    box-sizing: border-box;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px 20px 30px;
+  background-color: hsl(221, 21%, 18%);
+  box-shadow: 0 5px 15px 5px hsla(218, 25%, 15%, 0.5);
+  border-radius: 20px;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+    padding: 40px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__flex-left {
+      width: 36.3%;
+    }
+
+    &__flex-right {
+      width: 54.5%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 920px;
+    padding: 72px 60px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1080px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1240px;
+  }
+
+  &__image-holder {
+    margin-bottom: 24px;
 
     @media (min-width: 768px) {
-        max-width: 720px;
-        padding: 40px 35px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        &__flex-left {
-            width: 36.3%;
-        }
-
-        &__flex-right {
-            width: 54.5%;
-        }
+      margin-bottom: 0;
     }
-
-    @media (min-width: 1024px) {
-        max-width: 920px;
-        padding: 72px 60px;
-    }
-
-    @media (min-width: 1200px) {
-        max-width: 1080px;
-    }
-
-    @media (min-width: 1400px) {
-        max-width: 1240px;
-    }
-
-    &__image-holder {
-        margin-bottom: 24px;
-
-        @media (min-width: 768px) {
-            margin-bottom: 0;
-        }
-    }
+  }
 }

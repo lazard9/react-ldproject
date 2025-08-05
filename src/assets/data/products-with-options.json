@@ -1,50 +1,50 @@
 [
-    {
-        "color": "black",
-        "description": "This is the black color",
-        "image": "black_image.jpg",
-        "alt": "Black Image"
-    },
-    {
-        "color": "purple",
-        "description": "This is the purple color",
-        "image": "purple_image.jpg",
-        "alt": "Purple Image"
-    },
-    {
-        "color": "blue",
-        "description": "This is the blue color",
-        "image": "blue_image.jpg",
-        "alt": "Blue Image"
-    },
-    {
-        "color": "cyan",
-        "description": "This is the cyan color",
-        "image": "cyan_image.jpg",
-        "alt": "Cyan Image"
-    },
-    {
-        "color": "green",
-        "description": "This is the green color",
-        "image": "green_image.jpg",
-        "alt": "Green Image"
-    },
-    {
-        "color": "yellow",
-        "description": "This is the yellow color",
-        "image": "yellow_image.jpg",
-        "alt": "Yellow Image"
-    },
-    {
-        "color": "orange",
-        "description": "This is the orange color",
-        "image": "orange_image.jpg",
-        "alt": "Orange Image"
-    },
-    {
-        "color": "red",
-        "description": "This is the red color",
-        "image": "red_image.jpg",
-        "alt": "Red Image"
-    }
+  {
+    "color": "black",
+    "description": "This is the black color",
+    "image": "black_image.jpg",
+    "alt": "Black Image"
+  },
+  {
+    "color": "purple",
+    "description": "This is the purple color",
+    "image": "purple_image.jpg",
+    "alt": "Purple Image"
+  },
+  {
+    "color": "blue",
+    "description": "This is the blue color",
+    "image": "blue_image.jpg",
+    "alt": "Blue Image"
+  },
+  {
+    "color": "cyan",
+    "description": "This is the cyan color",
+    "image": "cyan_image.jpg",
+    "alt": "Cyan Image"
+  },
+  {
+    "color": "green",
+    "description": "This is the green color",
+    "image": "green_image.jpg",
+    "alt": "Green Image"
+  },
+  {
+    "color": "yellow",
+    "description": "This is the yellow color",
+    "image": "yellow_image.jpg",
+    "alt": "Yellow Image"
+  },
+  {
+    "color": "orange",
+    "description": "This is the orange color",
+    "image": "orange_image.jpg",
+    "alt": "Orange Image"
+  },
+  {
+    "color": "red",
+    "description": "This is the red color",
+    "image": "red_image.jpg",
+    "alt": "Red Image"
+  }
 ]

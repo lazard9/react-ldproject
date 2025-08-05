@@ -1,108 +1,116 @@
 .guess-color {
-    &--background {
-        border: 2px solid hsl(200, 100%, 90%);
-        border-radius: 0.5rem;
-        height: 150px;
-        margin-bottom: 40px;
+  &--background {
+    border: 2px solid hsl(200, 100%, 90%);
+    border-radius: 0.5rem;
+    height: 150px;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    width: 150px;
+    text-decoration: none;
+    padding: 12px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid hsl(200, 100%, 90%);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: hsl(200, 100%, 90%);
+    cursor: pointer;
+    transition: all 0.32s ease-in-out;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 1rem;
+
+    &:hover {
+      color: hsl(258, 18%, 19%);
+      background-color: hsl(200, 100%, 90%);
     }
 
-    &__button {
-        width: 150px;
-        text-decoration: none;
-        padding: 12px;
-        background-color: transparent;
-        border-radius: 8px;
-        border: 2px solid hsl(200, 100%, 90%);
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        color: hsl(200, 100%, 90%);
-        cursor: pointer;
-        transition: all 0.32s ease-in-out;
-        display: inline-block;
-        box-sizing: border-box;
-        margin-right: 20px;
-        margin-bottom: 1rem;
+    @media (min-width: 1024px) {
+      width: 180px;
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
 
-        &:hover {
-            color: hsl(258, 18%, 19%);
-            background-color: hsl(200, 100%, 90%);
-        }
+  &--success-message {
+    position: relative;
+    font-weight: 700;
 
-        @media (min-width: 1024px) {
-            width: 180px;
-            font-size: 18px;
-            padding: 15px;
-        }
+    .correct {
+      color: hsl(131, 78%, 56%);
+      position: absolute;
+      margin-top: 0;
+      animation: fadeInOut 3s ease forwards;
+
+      span {
+        display: block;
+      }
+
+      &::after {
+        content: counter(count);
+        animation: counter 3s linear infinite;
+        counter-reset: count 0;
+        margin-left: 10px;
+      }
     }
 
-    &--success-message {
-        position: relative;
-        font-weight: 700;
-
-        .correct {
-            color: hsl(131, 78%, 56%);
-            position: absolute;
-            margin-top: 0;
-            animation: fadeInOut 3s ease forwards;
-
-            span {
-                display: block;
-            }
-
-            &::after {
-                content: counter(count);
-                animation: counter 3s linear infinite;
-                counter-reset: count 0;
-                margin-left: 10px;
-            }
-        }
-
-        .incorrect {
-            color: hsl(357, 95%, 61%);
-            position: absolute;
-            margin-top: 0;
-            animation: fadeInOut2 3s ease forwards;
-        }
+    .incorrect {
+      color: hsl(357, 95%, 61%);
+      position: absolute;
+      margin-top: 0;
+      animation: fadeInOut2 3s ease forwards;
     }
+  }
 }
 
 @keyframes counter {
-    0% {
-        counter-increment: count 3;
-    }
-    25% {
-        counter-increment: count 3;
-    }
-    50% {
-        counter-increment: count 2;
-    }
-    75% {
-        counter-increment: count 1;
-    }
-    100% {
-        counter-increment: count 0;
-    }
+  0% {
+    counter-increment: count 3;
+  }
+
+  25% {
+    counter-increment: count 3;
+  }
+
+  50% {
+    counter-increment: count 2;
+  }
+
+  75% {
+    counter-increment: count 1;
+  }
+
+  100% {
+    counter-increment: count 0;
+  }
 }
 
 @keyframes fadeInOut {
-    0%,
-    100% {
-        opacity: 0;
-    }
-    20%,
-    80% {
-        opacity: 1;
-    }
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  20%,
+  80% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInOut2 {
-    0%,
-    100% {
-        opacity: 0;
-    }
-    10%,
-    90% {
-        opacity: 1;
-    }
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+  }
 }

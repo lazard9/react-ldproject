@@ -1,126 +1,126 @@
 .url-state {
-    &__input {
-        margin-bottom: 15px;
-        position: relative;
+  &__input {
+    margin-bottom: 15px;
+    position: relative;
 
-        label {
-            display: flex;
-            align-items: center;
-        }
-
-        input {
-            margin-left: 10px;
-            flex: 1;
-            outline: none;
-            font-size: 0.875rem;
-            letter-spacing: 1px;
-            border: 1px solid hsl(200, 100%, 40%);
-            background: hsl(200, 100%, 30%);
-            border-radius: 0.25em;
-            padding: 0.5em;
-            color: hsl(200, 100%, 90%);
-
-            &:focus {
-                border: 1px solid hsl(200, 100%, 70%);
-            }
-        }
+    label {
+      display: flex;
+      align-items: center;
     }
 
-    &__checkbox {
-        margin-bottom: 15px;
+    input {
+      margin-left: 10px;
+      flex: 1;
+      outline: none;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      border: 1px solid hsl(200, 100%, 40%);
+      background: hsl(200, 100%, 30%);
+      border-radius: 0.25em;
+      padding: 0.5em;
+      color: hsl(200, 100%, 90%);
 
-        input {
-            outline: none;
-            width: 0;
-            height: 0;
-            appearance: none;
-            pointer-events: none;
-            position: absolute;
-        }
+      &:focus {
+        border: 1px solid hsl(200, 100%, 70%);
+      }
+    }
+  }
 
-        label {
-            display: flex;
-            gap: 10px;
-            cursor: pointer;
-            align-items: center;
+  &__checkbox {
+    margin-bottom: 15px;
 
-            &::after {
-                content: "";
-                display: block;
-                width: 0.9rem;
-                height: 0.9rem;
-                background: hsl(200, 100%, 90%);
-                border-radius: 0.25em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            &:hover::after {
-                background: hsl(200, 100%, 80%);
-            }
-        }
-
-        &:has(input:checked) label {
-            &::after {
-                content: "✔";
-                background: hsl(200, 100%, 40%);
-                color: hsl(200, 100%, 90%);
-                font-size: 0.75rem;
-                font-weight: bold;
-            }
-
-            &:hover::after {
-                background: hsl(200, 100%, 30%);
-            }
-        }
+    input {
+      outline: none;
+      width: 0;
+      height: 0;
+      appearance: none;
+      pointer-events: none;
+      position: absolute;
     }
 
-    &__list {
+    label {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+      align-items: center;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0.9rem;
+        height: 0.9rem;
+        background: hsl(200, 100%, 90%);
+        border-radius: 0.25em;
         display: flex;
-        padding-left: 0;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        list-style: none;
+        justify-content: center;
+        align-items: center;
+      }
 
-        li {
-            position: relative;
-            padding-left: 20px;
-            margin-right: 25px;
-            margin-bottom: 12px;
-        }
-
-        li::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 5px;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-image: linear-gradient(to right, hsl(194, 97%, 55%), hsl(263, 94%, 65%));
-        }
+      &:hover::after {
+        background: hsl(200, 100%, 80%);
+      }
     }
 
-    &__clear-button {
-        width: 180px;
-        text-decoration: none;
-        padding: 5px;
-        background-color: transparent;
-        border-radius: 4px;
-        border: 1px solid hsl(200, 100%, 90%);
-        font-size: 14px;
-        text-align: center;
+    &:has(input:checked) label {
+      &::after {
+        content: "✔";
+        background: hsl(200, 100%, 40%);
         color: hsl(200, 100%, 90%);
-        cursor: pointer;
-        transition: all 0.32s ease-in-out;
-        display: inline-block;
-        box-sizing: border-box;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
 
-        &:hover {
-            color: hsl(258, 18%, 19%);
-            background-color: hsl(200, 100%, 90%);
-        }
+      &:hover::after {
+        background: hsl(200, 100%, 30%);
+      }
     }
+  }
+
+  &__list {
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-right: 25px;
+      margin-bottom: 12px;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-image: linear-gradient(to right, hsl(194, 97%, 55%), hsl(263, 94%, 65%));
+    }
+  }
+
+  &__clear-button {
+    width: 180px;
+    text-decoration: none;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid hsl(200, 100%, 90%);
+    font-size: 14px;
+    text-align: center;
+    color: hsl(200, 100%, 90%);
+    cursor: pointer;
+    transition: all 0.32s ease-in-out;
+    display: inline-block;
+    box-sizing: border-box;
+
+    &:hover {
+      color: hsl(258, 18%, 19%);
+      background-color: hsl(200, 100%, 90%);
+    }
+  }
 }

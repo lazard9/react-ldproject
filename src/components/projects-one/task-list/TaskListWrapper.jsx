@@ -10,61 +10,56 @@ import TaskList from "./TaskList";
  * and delete tasks. It renders a TaskForm for adding tasks and a TaskList
  * for displaying and managing existing tasks.
  */
-
 const TaskListHolder = () => {
-    // const [tasks, setTasks] = useState([]);
-    const [tasks, setTasks] = useState(() => {
-        const localValue = localStorage.getItem("ITEMS");
-        if (localValue == null) return [];
+  // const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue == null) return [];
 
-        return JSON.parse(localValue);
-    });
+    return JSON.parse(localValue);
+  });
 
-    useEffect(() => {
-        localStorage.setItem("ITEMS", JSON.stringify(tasks));
-    }, [tasks]);
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(tasks));
+  }, [tasks]);
 
-    function addTask(title) {
-        const taskExists = tasks.some((task) => task.title === title);
-    
-        if (taskExists) {
-            return { success: false, message: "Task already exists!" };
+  function addTask(title) {
+    const taskExists = tasks.some((task) => task.title === title);
+
+    if (taskExists) {
+      return { success: false, message: "Task already exists!" };
+    }
+
+    const newTask = { id: crypto.randomUUID(), title, completed: false };
+    setTasks((currentTasks) => [...currentTasks, newTask]);
+
+    return { success: true, message: "Task added successfully!" };
+  }
+
+  function toggleTask(id, completed) {
+    setTasks((currentTasks) => {
+      return currentTasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed };
         }
-    
-        const newTask = { id: crypto.randomUUID(), title, completed: false };
-        setTasks((currentTasks) => [...currentTasks, newTask]);
-    
-        return { success: true, message: "Task added successfully!" };
-    }    
 
-    function toggleTask(id, completed) {
-        setTasks((currentTasks) => {
-            return currentTasks.map((task) => {
-                if (task.id === id) {
-                    return { ...task, completed };
-                }
+        return task;
+      });
+    });
+  }
 
-                return task;
-            });
-        });
-    }
+  function deleteTask(id) {
+    setTasks((currentTasks) => {
+      return currentTasks.filter((task) => task.id !== id);
+    });
+  }
 
-    function deleteTask(id) {
-        setTasks((currentTasks) => {
-            return currentTasks.filter((task) => task.id !== id);
-        });
-    }
-
-    return (
-        <>
-            <TaskForm addTask={addTask} />
-            <TaskList
-                tasks={tasks}
-                toggleTask={toggleTask}
-                deleteTask={deleteTask}
-            />
-        </>
-    );
+  return (
+    <>
+      <TaskForm addTask={addTask} />
+      <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask} />
+    </>
+  );
 };
 
 export default TaskListHolder;

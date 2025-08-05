@@ -1,38 +1,38 @@
 [
-    {
-        "id": "1",
-        "imgUrl": "/media/product-1.png",
-        "imgAlt": "some text",
-        "title": "Card Title I",
-        "description": "Supportive text and the essential context goes here.",
-        "ctaLink": "#",
-        "ctaText": "Action"
-    },
-    {
-        "id": "2",
-        "imgUrl": "/media/product-2.png",
-        "imgAlt": "some text",
-        "title": "Card Title II",
-        "description": "Supportive text and the essential context goes here.",
-        "ctaLink": "#",
-        "ctaText": "Action"
-    },
-    {
-        "id": "3",
-        "imgUrl": "/media/product-3.png",
-        "imgAlt": "some text",
-        "title": "Card Title III",
-        "description": "Supportive text and the essential context goes here.",
-        "ctaLink": "#",
-        "ctaText": "Action"
-    },
-    {
-        "id": "4",
-        "imgUrl": "/media/product-4.jpg",
-        "imgAlt": "some text",
-        "title": "Card Title IV",
-        "description": "Supportive text and the essential context goes here.",
-        "ctaLink": "#",
-        "ctaText": "Action"
-    }
+  {
+    "id": "1",
+    "imgUrl": "/media/product-1.png",
+    "imgAlt": "some text",
+    "title": "Card Title I",
+    "description": "Supportive text and the essential context goes here.",
+    "ctaLink": "#",
+    "ctaText": "Action"
+  },
+  {
+    "id": "2",
+    "imgUrl": "/media/product-2.png",
+    "imgAlt": "some text",
+    "title": "Card Title II",
+    "description": "Supportive text and the essential context goes here.",
+    "ctaLink": "#",
+    "ctaText": "Action"
+  },
+  {
+    "id": "3",
+    "imgUrl": "/media/product-3.png",
+    "imgAlt": "some text",
+    "title": "Card Title III",
+    "description": "Supportive text and the essential context goes here.",
+    "ctaLink": "#",
+    "ctaText": "Action"
+  },
+  {
+    "id": "4",
+    "imgUrl": "/media/product-4.jpg",
+    "imgAlt": "some text",
+    "title": "Card Title IV",
+    "description": "Supportive text and the essential context goes here.",
+    "ctaLink": "#",
+    "ctaText": "Action"
+  }
 ]

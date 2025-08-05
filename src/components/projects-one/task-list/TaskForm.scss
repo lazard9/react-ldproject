@@ -1,99 +1,102 @@
 .task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 40px;
+  position: relative;
+
+  &__row {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 40px;
-    position: relative;
+    gap: 0.1rem;
+  }
 
-    &__row {
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
+  &__start-typing {
+    animation: fadeInOut 4s ease forwards;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 32px;
+    text-align: center;
+    color: hsl(135, 100%, 40%);
+    pointer-events: none;
+  }
+
+  input {
+    outline: none;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    border: 1px solid hsl(200, 100%, 40%);
+    background: hsl(200, 100%, 30%);
+    border-radius: 0.25em;
+    padding: 0.5em;
+    color: hsl(200, 100%, 90%);
+    text-align: center;
+
+    &:focus {
+      border: 1px solid hsl(200, 100%, 70%);
     }
+  }
 
-    &__start-typing {
-        animation: fadeInOut 4s ease forwards;
-        font-size: 0.875rem;
-        font-weight: bold;
-        letter-spacing: 1px;
-        font-weight: 500;
-        display: block;
-        width: 100%;
-        position: absolute;
-        top: 32px;
-        text-align: center;
-        color: hsl(135, 100%, 40%);
-        pointer-events: none;
-    }
+  &__submit {
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(200, 100%, 50%);
+    color: hsl(200, 100%, 50%);
+    padding: 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+  }
 
-    input {
-        outline: none;
-        font-size: 0.875rem;
-        letter-spacing: 1px;
-        border: 1px solid hsl(200, 100%, 40%);
-        background: hsl(200, 100%, 30%);
-        border-radius: 0.25em;
-        padding: 0.5em;
-        color: hsl(200, 100%, 90%);
-        text-align: center;
+  &__submit:hover,
+  &__submit:focus-visible {
+    background: hsl(200, 100%, 50%, 0.2);
+  }
 
-        &:focus {
-            border: 1px solid hsl(200, 100%, 70%);
-        }
-    }
+  &__success-notification,
+  &__duplicate-notification {
+    animation: fadeInOut 4s ease forwards;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -28px;
+    text-align: center;
+  }
 
-    &__submit {
-        width: 100%;
-        font-size: 0.875rem;
-        font-weight: bold;
-        letter-spacing: 1px;
-        background: hsl(200, 100%, 50%, 0.1);
-        border: 1px solid hsl(200, 100%, 50%);
-        color: hsl(200, 100%, 50%);
-        padding: 0.5em;
-        border-radius: 0.25em;
-        cursor: pointer;
-        outline: none;
-    }
+  &__success-notification {
+    color: hsl(135, 100%, 40%);
+  }
 
-    &__submit:hover,
-    &__submit:focus-visible {
-        background: hsl(200, 100%, 50%, 0.2);
-    }
-
-    &__success-notification,
-    &__duplicate-notification {
-        animation: fadeInOut 4s ease forwards;
-        font-size: 0.875rem;
-        font-weight: bold;
-        letter-spacing: 1px;
-        display: block;
-        width: 100%;
-        position: absolute;
-        bottom: -28px;
-        text-align: center;
-    }
-
-    &__success-notification {
-        color: hsl(135, 100%, 40%);
-    }
-
-    &__duplicate-notification {
-        color: hsl(0, 100%, 40%);
-    }
+  &__duplicate-notification {
+    color: hsl(0, 100%, 40%);
+  }
 }
 
 @keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    33% {
-        opacity: 1;
-    }
-    66% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

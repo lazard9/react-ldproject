@@ -1,65 +1,65 @@
 .product-card {
+  position: relative;
+  padding: 18px 19px 74px 18px;
+  background-color: hsl(218, 25%, 15%);
+  box-shadow: 0 5px 15px 5px hsla(218, 25%, 15%, 0.5);
+  border-radius: 24px;
+  height: 505px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 360px;
+  transition: box-shadow 320ms ease-in-out;
+
+  &:hover {
+    box-shadow: 0 5px 20px 10px hsla(215, 26%, 18%, 0.5);
+  }
+
+  &__image-holder {
+    margin-bottom: 28px;
+  }
+
+  &__dots {
+    position: absolute;
+    top: 18px;
+    right: 9px;
+    z-index: 2;
+  }
+
+  &__description {
+    margin: 19px 0 0;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
     position: relative;
-    padding: 18px 19px 74px 18px;
-    background-color: hsl(218, 25%, 15%);
-    box-shadow: 0 5px 15px 5px hsla(218, 25%, 15%, 0.5);
-    border-radius: 24px;
-    height: 505px;
-    box-sizing: border-box;
-    overflow: hidden;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 360px;
-    transition: box-shadow 320ms ease-in-out;
+    z-index: 2;
+  }
 
-    &:hover {
-        box-shadow: 0 5px 20px 10px hsla(215, 26%, 18%, 0.5);
+  &__cta {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: hsl(194, 97%, 55%);
+    text-decoration: none;
+    position: absolute;
+    left: 18px;
+    bottom: 55px;
+    z-index: 2;
+    text-decoration: none;
+    transition: color 0.32s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: hsl(263, 94%, 65%);
     }
-
-    &__image-holder {
-        margin-bottom: 28px;
-    } 
-
-    &__dots {
-        position: absolute;
-        top: 18px;
-        right: 9px;
-        z-index: 2;
-    }
-
-    &__description {
-        margin: 19px 0 0;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.38;
-        letter-spacing: normal;
-        text-align: left;
-        position: relative;
-        z-index: 2;
-    }
-
-    &__cta {
-        font-size: 18px;
-        font-weight: 600;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: hsl(194, 97%, 55%);
-        text-decoration: none;
-        position: absolute;
-        left: 18px;
-        bottom: 55px;
-        z-index: 2;
-        text-decoration: none;
-        transition: color 0.32s ease-in-out;
-
-        &:hover,
-        &:focus {
-            color: hsl(263, 94%, 65%);
-        }
-    }
+  }
 }

@@ -1,26 +1,10 @@
 .portrait-card {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 
-    // @media screen and (min-width: 576px) {
-    //     width: 46%;
-    //     margin-left: 2%;
-    //     margin-right: 2%;
-    // }
-
-    // @media screen and (min-width: 768px) {
-    //     width: 29%;
-    //     margin-bottom: 80px;
-    // }
-
-    // @media screen and (min-width: 1025px) {
-    //     width: 21%;
-    //     margin-bottom: 0 0.5% 90px;
-    // }
-
-    &__image-holder {
-        width: 160px;
-        margin-bottom: 15px;
-        display: inline-block;
-    }
+  &__image-holder {
+    width: 160px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
 }

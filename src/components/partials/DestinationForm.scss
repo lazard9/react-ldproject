@@ -1,50 +1,50 @@
 .destination-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
 
-    &__field {
-        margin-bottom: 1.2rem;
-        display: flex;
-        flex-direction: column;
+  &__field {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
 
-        label {
-            margin-bottom: 0.4rem;
-            font-weight: bold;
-        }
-
-        input,
-        textarea {
-            padding: 0.6rem;
-            border: 2px solid hsl(200, 100%, 90%);
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        textarea {
-            min-height: 220px;
-        }
+    label {
+      margin-bottom: 0.4rem;
+      font-weight: bold;
     }
 
-    &__submit {
-        min-width: 180px;
-        text-decoration: none;
-        padding: 15px;
-        background-color: transparent;
-        border-radius: 8px;
-        border: 2px solid hsl(200, 100%, 90%);
-        font-size: 18px;
-        text-align: center;
-        color: hsl(200, 100%, 90%);
-        cursor: pointer;
-        transition: all 0.32s ease-in-out;
-        display: inline-block;
-        box-sizing: border-box;
-        margin-top: 30px;
-
-        &:hover {
-            color: hsl(258, 18%, 19%);
-            background-color: hsl(200, 100%, 90%);
-        }
+    input,
+    textarea {
+      padding: 0.6rem;
+      border: 2px solid hsl(200, 100%, 90%);
+      border-radius: 4px;
+      font-size: 1rem;
     }
+
+    textarea {
+      min-height: 220px;
+    }
+  }
+
+  &__submit {
+    min-width: 180px;
+    text-decoration: none;
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid hsl(200, 100%, 90%);
+    font-size: 18px;
+    text-align: center;
+    color: hsl(200, 100%, 90%);
+    cursor: pointer;
+    transition: all 0.32s ease-in-out;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 30px;
+
+    &:hover {
+      color: hsl(258, 18%, 19%);
+      background-color: hsl(200, 100%, 90%);
+    }
+  }
 }

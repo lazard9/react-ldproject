@@ -1,56 +1,60 @@
 .cta-button {
-    all: unset; 
-    min-width: 200px;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.32s ease-in-out;
-    display: inline-block;
-    box-sizing: border-box;
-    background: none;
-    outline: none;
-    margin: 0 30px 30px 0;
-    line-height: 1.25;
+  all: unset;
+  min-width: 200px;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.32s ease-in-out;
+  display: inline-block;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  margin: 0 30px 30px 0;
+  line-height: 1.25;
 
-    &--primary {
-        background-color: hsl(200, 100%, 90%);
-        color: hsl(258, 18%, 19%);
-        border-color: hsl(200, 100%, 90%);
-        &:hover {
-            background-color: hsl(200, 100%, 85%);
-            color: hsl(258, 18%, 19%);
-        }
-    }
+  &--primary {
+    background-color: hsl(200, 100%, 90%);
+    color: hsl(258, 18%, 19%);
+    border-color: hsl(200, 100%, 90%);
 
-    &--danger {
-        background-color: hsl(0, 100%, 85%);
-        color: hsl(0, 60%, 20%);
-        border-color: hsl(0, 100%, 85%);
-        &:hover {
-            background-color: hsl(0, 100%, 80%);
-        }
+    &:hover {
+      background-color: hsl(200, 100%, 85%);
+      color: hsl(258, 18%, 19%);
     }
+  }
 
-    &--success {
-        background-color: hsl(140, 70%, 85%);
-        color: hsl(140, 40%, 20%);
-        border-color: hsl(140, 70%, 85%);
-        &:hover {
-            background-color: hsl(140, 70%, 80%);
-        }
-    }
+  &--danger {
+    background-color: hsl(0, 100%, 85%);
+    color: hsl(0, 60%, 20%);
+    border-color: hsl(0, 100%, 85%);
 
-    &--secondary {
-        background-color: hsl(258, 20%, 80%);
-        color: hsl(258, 20%, 20%);
-        border-color: hsl(258, 20%, 80%);
-        &:hover {
-            background-color: hsl(258, 20%, 75%);
-        }
+    &:hover {
+      background-color: hsl(0, 100%, 80%);
     }
+  }
+
+  &--success {
+    background-color: hsl(140, 70%, 85%);
+    color: hsl(140, 40%, 20%);
+    border-color: hsl(140, 70%, 85%);
+
+    &:hover {
+      background-color: hsl(140, 70%, 80%);
+    }
+  }
+
+  &--secondary {
+    background-color: hsl(258, 20%, 80%);
+    color: hsl(258, 20%, 20%);
+    border-color: hsl(258, 20%, 80%);
+
+    &:hover {
+      background-color: hsl(258, 20%, 75%);
+    }
+  }
 }

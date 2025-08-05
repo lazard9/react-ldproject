@@ -1,126 +1,126 @@
 [
-    {
-        "name": "Chocolate",
-        "candy": true
-    },
-    {
-        "name": "Bell pepper",
-        "candy": false
-    },
-    {
-        "name": "Water",
-        "candy": false
-    },
-    {
-        "name": "Shampoo",
-        "candy": false
-    },
-    {
-        "name": "Bonbon",
-        "candy": true
-    },
-    {
-        "name": "Milk",
-        "candy": false
-    },
-    {
-        "name": "Bread",
-        "candy": false
-    },
-    {
-        "name": "Yogurt",
-        "candy": false
-    },
-    {
-        "name": "Soda",
-        "candy": false
-    },
-    {
-        "name": "Watermelon",
-        "candy": true
-    },
-    {
-        "name": "Beer",
-        "candy": false
-    },
-    {
-        "name": "Potato chips",
-        "candy": true
-    },
-    {
-        "name": "Cheese",
-        "candy": false
-    },
-    {
-        "name": "Bananas",
-        "candy": true
-    },
-    {
-        "name": "Spaghetti",
-        "candy": false
-    },
-    {
-        "name": "Fish",
-        "candy": false
-    },
-    {
-        "name": "Ice cream",
-        "candy": true
-    },
-    {
-        "name": "Chicken meat",
-        "candy": false
-    },
-    {
-        "name": "Medicine",
-        "candy": false
-    },
-    {
-        "name": "Toilet paper",
-        "candy": false
-    },
-    {
-        "name": "Coffee",
-        "candy": false
-    },
-    {
-        "name": "Mayonnaise",
-        "candy": false
-    },
-    {
-        "name": "Powder detergent",
-        "candy": false
-    },
-    {
-        "name": "Toothbrush",
-        "candy": false
-    },
-    {
-        "name": "Potatoes",
-        "candy": false
-    },
-    {
-        "name": "Tomatoes",
-        "candy": false
-    },
-    {
-        "name": "Oil",
-        "candy": false
-    },
-    {
-        "name": "Lettuce",
-        "candy": false
-    },
-    {
-        "name": "Flour",
-        "candy": false
-    },
-    {
-        "name": "Cantaloupe",
-        "candy": true
-    },
-    {
-        "name": "Tea",
-        "candy": false
-    }
+  {
+    "name": "Chocolate",
+    "candy": true
+  },
+  {
+    "name": "Bell pepper",
+    "candy": false
+  },
+  {
+    "name": "Water",
+    "candy": false
+  },
+  {
+    "name": "Shampoo",
+    "candy": false
+  },
+  {
+    "name": "Bonbon",
+    "candy": true
+  },
+  {
+    "name": "Milk",
+    "candy": false
+  },
+  {
+    "name": "Bread",
+    "candy": false
+  },
+  {
+    "name": "Yogurt",
+    "candy": false
+  },
+  {
+    "name": "Soda",
+    "candy": false
+  },
+  {
+    "name": "Watermelon",
+    "candy": true
+  },
+  {
+    "name": "Beer",
+    "candy": false
+  },
+  {
+    "name": "Potato chips",
+    "candy": true
+  },
+  {
+    "name": "Cheese",
+    "candy": false
+  },
+  {
+    "name": "Bananas",
+    "candy": true
+  },
+  {
+    "name": "Spaghetti",
+    "candy": false
+  },
+  {
+    "name": "Fish",
+    "candy": false
+  },
+  {
+    "name": "Ice cream",
+    "candy": true
+  },
+  {
+    "name": "Chicken meat",
+    "candy": false
+  },
+  {
+    "name": "Medicine",
+    "candy": false
+  },
+  {
+    "name": "Toilet paper",
+    "candy": false
+  },
+  {
+    "name": "Coffee",
+    "candy": false
+  },
+  {
+    "name": "Mayonnaise",
+    "candy": false
+  },
+  {
+    "name": "Powder detergent",
+    "candy": false
+  },
+  {
+    "name": "Toothbrush",
+    "candy": false
+  },
+  {
+    "name": "Potatoes",
+    "candy": false
+  },
+  {
+    "name": "Tomatoes",
+    "candy": false
+  },
+  {
+    "name": "Oil",
+    "candy": false
+  },
+  {
+    "name": "Lettuce",
+    "candy": false
+  },
+  {
+    "name": "Flour",
+    "candy": false
+  },
+  {
+    "name": "Cantaloupe",
+    "candy": true
+  },
+  {
+    "name": "Tea",
+    "candy": false
+  }
 ]

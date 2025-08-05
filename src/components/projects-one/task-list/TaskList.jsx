@@ -1,5 +1,5 @@
 import TaskItem from "./TaskItem";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./TaskList.scss";
 
 /**
@@ -17,38 +17,38 @@ import "./TaskList.scss";
  * @returns {JSX.Element} - The rendered list of tasks.
  */
 function TaskList({ tasks, toggleTask, deleteTask }) {
-    function remainingTasks(tasks) {
-        const remaining = tasks.filter((task) => !task.completed).length;
-        return remaining;
-    }
+  function remainingTasks(tasks) {
+    const remaining = tasks.filter((task) => !task.completed).length;
+    return remaining;
+  }
 
-    const remainingCount = remainingTasks(tasks);
+  const remainingCount = remainingTasks(tasks);
 
-    return (
-        <ul className="task-list">
-            {tasks.length === 0 && "No tasks to be viewed!"}
-            {tasks.map((task) => {
-                return (
-                    <TaskItem
-                        key={task.id}
-                        id={task.id}
-                        title={task.title}
-                        completed={task.completed}
-                        // {...task}
-                        toggleTask={toggleTask}
-                        deleteTask={deleteTask}
-                    />
-                );
-            })}
-            {tasks.length != 0 && <div>{remainingCount} tasks left to do.</div>}
-        </ul>
-    );
+  return (
+    <ul className="task-list">
+      {tasks.length === 0 && "No tasks to be viewed!"}
+      {tasks.map((task) => {
+        return (
+          <TaskItem
+            key={task.id}
+            id={task.id}
+            title={task.title}
+            completed={task.completed}
+            // {...task}
+            toggleTask={toggleTask}
+            deleteTask={deleteTask}
+          />
+        );
+      })}
+      {tasks.length != 0 && <div>{remainingCount} tasks left to do.</div>}
+    </ul>
+  );
 }
 
 TaskList.propTypes = {
-    tasks: PropTypes.array.isRequired,
-    toggleTask: PropTypes.func.isRequired,
-    deleteTask: PropTypes.func.isRequired,
+  tasks: PropTypes.array.isRequired,
+  toggleTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;

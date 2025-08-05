@@ -1,143 +1,160 @@
 .heading {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+
+  .h1,
+  .h2 {
+    font-weight: 700;
+    margin-top: 0;
+    letter-spacing: 1px;
+    margin-bottom: 2.5rem;
+    line-height: 1.333;
+    display: inline-flex;
+    background-image: linear-gradient(to right,
+        hsl(194, 97%, 55%),
+        hsl(263, 94%, 65%));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &--hero {
 
     .h1,
     .h2 {
-        font-weight: 700;
-        margin-top: 0;
-        letter-spacing: 1px;
-        margin-bottom: 2.5rem;
-        line-height: 1.333;
-        display: inline-flex;
-        background-image: linear-gradient(
-            to right,
-            hsl(194, 97%, 55%),
-            hsl(263, 94%, 65%)
-        );
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &.heading--paralax .h2 {
+    // -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    font-size: 87px;
+    line-height: 0.9;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    background-image: none;
+    margin-bottom: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 135px;
+      -webkit-text-stroke: 3px #fff;
     }
 
-    &--hero {
-        .h1,
-        .h2 {
-            margin-bottom: 1rem;
-        }
+    @media screen and (min-width: 1024px) {
+      font-size: 184px;
+    }
+  }
+
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.333;
+  }
+
+  .h1 {
+    font-size: 2.25rem;
+    /* 36px */
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      /* 40px */
     }
 
-    &--center {
-        text-align: center;
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+      /* 48px */
+    }
+  }
+
+  .h2 {
+    font-size: 2rem;
+    /* 32px */
+
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+      /* 40px */
     }
 
-    &--right {
-        text-align: right;
+    @media (min-width: 1024px) {
+      font-size: 2.25rem;
+      /* 40px */
+    }
+  }
+
+  .h3 {
+    font-size: 1.75rem;
+    /* 28px */
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      /* 32px */
     }
 
-    &.heading--paralax .h2 {
-        // -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 2px #fff;
-        font-size: 87px;
-        line-height: 0.9;
-        letter-spacing: normal;
-        text-align: center;
-        color: #fff;
-        position: relative;
-        z-index: 1;
-        background-image: none;
-        margin-bottom: 0;
-
-        @media screen and (min-width: 768px) {
-            font-size: 135px;
-            -webkit-text-stroke: 3px #fff;
-        }
-
-        @media screen and (min-width: 1024px) {
-            font-size: 184px;
-        }
+    @media (min-width: 1024px) {
+      font-size: 2rem;
+      /* 32px */
     }
-    
-    .h3,
-    .h4,
-    .h5,
-    .h6 {
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        line-height: 1.333;
+  }
+
+  .h4 {
+    font-size: 1.5rem;
+    /* 24px */
+
+    @media (min-width: 768px) {
+      font-size: 1.75rem;
+      /* 28px */
     }
 
-    .h1 {
-        font-size: 2.25rem; /* 36px */
+    @media (min-width: 1024px) {
+      font-size: 1.75rem;
+      /* 28px */
+    }
+  }
 
-        @media (min-width: 768px) {
-            font-size: 2.5rem; /* 40px */
-        }
+  .h5 {
+    font-size: 1.25rem;
+    /* 20px */
 
-        @media (min-width: 1024px) {
-            font-size: 3rem; /* 48px */
-        }
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      /* 24px */
     }
 
-    .h2 {
-        font-size: 2rem; /* 32px */
+    @media (min-width: 1024px) {
+      font-size: 1.5rem;
+      /* 24px */
+    }
+  }
 
-        @media (min-width: 768px) {
-            font-size: 2.25rem; /* 40px */
-        }
+  .h6 {
+    font-size: 1rem;
+    /* 16px */
 
-        @media (min-width: 1024px) {
-            font-size: 2.25rem; /* 40px */
-        }
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+      /* 20px */
     }
 
-    .h3 {
-        font-size: 1.75rem; /* 28px */
-
-        @media (min-width: 768px) {
-            font-size: 2rem; /* 32px */
-        }
-
-        @media (min-width: 1024px) {
-            font-size: 2rem; /* 32px */
-        }
+    @media (min-width: 1024px) {
+      font-size: 1.25rem;
+      /* 20px */
     }
-
-    .h4 {
-        font-size: 1.5rem; /* 24px */
-
-        @media (min-width: 768px) {
-            font-size: 1.75rem; /* 28px */
-        }
-
-        @media (min-width: 1024px) {
-            font-size: 1.75rem; /* 28px */
-        }
-    }
-
-    .h5 {
-        font-size: 1.25rem; /* 20px */
-
-        @media (min-width: 768px) {
-            font-size: 1.5rem; /* 24px */
-        }
-
-        @media (min-width: 1024px) {
-            font-size: 1.5rem; /* 24px */
-        }
-    }
-
-    .h6 {
-        font-size: 1rem; /* 16px */
-
-        @media (min-width: 768px) {
-            font-size: 1.25rem; /* 20px */
-        }
-
-        @media (min-width: 1024px) {
-            font-size: 1.25rem; /* 20px */
-        }
-    }
+  }
 }
