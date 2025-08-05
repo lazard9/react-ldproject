@@ -24,14 +24,11 @@ export default [
       },
     },
     rules: {
-      // Iskljucujemo ovo pravilo jer React 17+ to radi automatski
       "react/react-in-jsx-scope": "off",
-
-      // Mogu se dodati i druga pravila
       "react/jsx-uses-react": "off",
-      "react/prop-types": "off", // Mnogi koriste TypeScript ili prosto ne žele PropTypes
+      "react/prop-types": "off",
 
-      // Povezujemo preporučena pravila za hooks
+      ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
     },
   },
