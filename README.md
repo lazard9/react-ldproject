@@ -32,33 +32,33 @@ Navigate through the menu to explore different project pages, each featuring mor
 
 1. Clone this repository:
 
-    ```bash
-    git clone https://github.com/lazard9/react-ldproject.git
-    ```
+   ```bash
+   git clone https://github.com/lazard9/react-ldproject.git
+   ```
 
 2. Navigate to the project folder:
 
-    ```bash
-    cd react-ldproject
-    ```
+   ```bash
+   cd react-ldproject
+   ```
 
 3. Install dependencies:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 4. Start the JSON server [http://localhost:8080](http://localhost:8080):
 
-    ```bash
-    npm run server
-    ```
+   ```bash
+   npm run server
+   ```
 
 5. Run the development server [http://localhost:8080](http://localhost:8080):
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 ## Available Scripts
 
@@ -70,7 +70,8 @@ Defined in `package.json`:
   "build": "vite build",
   "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
   "preview": "vite preview",
-  "server": "json-server --watch src/assets/data/slider-cards.json --port 8080"
+  "server": "json-server --watch src/assets/data/destination-cards.json --port 8080",
+  "test": "vitest"
 }
 ```
 
@@ -83,16 +84,16 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 export default defineConfig({
-    plugins: [react()],
-    server: {
-        proxy: {
-            "/api": {
-                target: "http://localhost:8080",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ""),
-            },
-        },
+  plugins: [react()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
     },
+  },
 });
 ```
 
@@ -152,30 +153,30 @@ These projects are inspired by tasks and solutions found on the Web Dev Simplifi
 
 1. **Task List**
 
-    - Based on the Web Dev Simplified Todo list project.
-    - Added input validation: prevents empty tasks and duplicate entries.
-    - First letter of each task is automatically capitalized.
+   - Based on the Web Dev Simplified Todo list project.
+   - Added input validation: prevents empty tasks and duplicate entries.
+   - First letter of each task is automatically capitalized.
 
 2. **URL Search Parameters**
 
-    - Demonstrates filtering a product list using two approaches:
-        - `useState` for state management.
-        - `useSearchParams` to store state in the URL, allowing bookmarking and sharing.
-    - Includes reset buttons for easier state management.
+   - Demonstrates filtering a product list using two approaches:
+     - `useState` for state management.
+     - `useSearchParams` to store state in the URL, allowing bookmarking and sharing.
+   - Includes reset buttons for easier state management.
 
 3. **Product With Options**
 
-    - Similar to the previous project, allows selecting product variations.
-    - Uses `useSearchParams` instead of `useState` for managing state in the URL.
-    - Two approaches shown:
-        - Hybrid approach using `useState` and `useEffect` (not recommended for production).
-        - Exclusive `useSearchParams` approach (better for URL-based state management).
-    - Parameters only appear in the URL after user interaction.
+   - Similar to the previous project, allows selecting product variations.
+   - Uses `useSearchParams` instead of `useState` for managing state in the URL.
+   - Two approaches shown:
+     - Hybrid approach using `useState` and `useEffect` (not recommended for production).
+     - Exclusive `useSearchParams` approach (better for URL-based state management).
+   - Parameters only appear in the URL after user interaction.
 
 4. **Guess Color Game**
-    - A simple game where the user attempts to guess the correct color.
-    - Once correctly guessed, the game resets after a few seconds.
-    - Initially implemented with `useEffect`, but later refactored to rely only on `useState` for better control.
+   - A simple game where the user attempts to guess the correct color.
+   - Once correctly guessed, the game resets after a few seconds.
+   - Initially implemented with `useEffect`, but later refactored to rely only on `useState` for better control.
 
 ## Destinations Listing App
 
@@ -204,10 +205,46 @@ Unlike the original course project, this version splits the frontend and backend
 
 This app focuses on reinforcing React fundamentals and creating maintainable, scalable component structures through hands-on experimentation.
 
+## Testing Setup & API Mocks
+
+### Testing API Endpoints with Vitest and MSW
+
+This project now includes **unit tests for the API layer** (`src/api/destinations.js`) using:
+
+- **Vitest** — a modern test runner compatible with Vite and React projects,
+- **MSW (Mock Service Worker) v1** — to simulate API requests within tests, allowing testing without a real backend server,
+- Global test environment configured in `vite.config.js` using `jsdom` and a mock server that intercepts `fetch` requests,
+- Test examples cover CRUD operations (GET, POST, PUT, DELETE) on the `/api/destinations` endpoints.
+
+## Component Testing Overview
+
+In addition to API endpoint tests, this project includes comprehensive React component tests for key UI parts, specifically:
+
+- **DestinationCard** — tested for correct rendering of destination data, including images, titles, descriptions, and call-to-action links.
+
+- **DestinationForm** — tested for rendering form inputs, user interactions such as typing and submitting data, and handling of edit vs create modes.
+
+- **Col** — a simple layout component tested for proper rendering of CSS class names based on props.
+
+The tests use **React Testing Library** to simulate user interaction and verify UI output, ensuring components behave as expected in isolation.
+
+This approach guarantees:
+
+- Reliable UI rendering,  
+- Correct event handling,  
+- Stable integration between components and API mocks,  
+- Easier maintenance and confidence when refactoring or extending the app.
+
+### How to run the tests
+
+```bash
+npm run test
+```
+
 ---
 
 ## Final Notes
 
 This project is a collection of learning exercises and experiments, helping refine skills in React, state management, and UI development.
 
-| Built with curiosity and care by *Lazar Dačić* 👨‍💻
+| Built with curiosity and care by _Lazar Dačić_ 👨‍💻
